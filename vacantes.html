@@ -7,15 +7,72 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="animations.css" rel="stylesheet">
     <style>
         body { font-family: 'Manrope', sans-serif; }
         .active-nav { background-color: rgba(0, 143, 140, 0.1); border-left: 4px solid #008f8c; }
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Mobile Header -->
+    <header class="lg:hidden bg-gray-900 text-white p-4 flex items-center justify-between sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div class="bg-teal-600 p-2 rounded-lg">
+                <span class="material-symbols-outlined text-white text-xl">vpn_key</span>
+            </div>
+            <div>
+                <h1 class="text-base font-bold">Llave en mano</h1>
+            </div>
+        </div>
+        <button onclick="toggleMenu()" class="p-2 hover:bg-gray-800 rounded-lg">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden menu-overlay" onclick="toggleMenu()">
+        <div class="bg-gray-900 w-64 h-full menu-slide" onclick="event.stopPropagation()">
+            <div class="p-6 flex items-center justify-between border-b border-gray-800">
+                <div class="flex items-center gap-3">
+                    <div class="bg-teal-600 p-2 rounded-lg">
+                        <span class="material-symbols-outlined text-white">vpn_key</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-white">Llave en mano</h1>
+                    </div>
+                </div>
+                <button onclick="toggleMenu()" class="text-white">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="px-3 py-4 space-y-1">
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors text-white">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="text-sm">Dashboard</span>
+                </a>
+                <a href="vacantes.html" class="flex items-center gap-3 px-4 py-3 rounded-lg active-nav text-teal-500">
+                    <span class="material-symbols-outlined">work</span>
+                    <span class="text-sm font-semibold">Vacantes</span>
+                </a>
+                <a href="candidatos.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors text-white">
+                    <span class="material-symbols-outlined">group</span>
+                    <span class="text-sm">Candidatos</span>
+                </a>
+                <a href="nueva-busqueda.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors text-white">
+                    <span class="material-symbols-outlined">add_circle</span>
+                    <span class="text-sm">Nueva Búsqueda</span>
+                </a>
+                <a href="suscripcion.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors text-white">
+                    <span class="material-symbols-outlined">payments</span>
+                    <span class="text-sm">Suscripción</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
     <div class="flex h-screen">
-        <!-- Sidebar -->
-        <aside class="w-64 bg-gray-900 text-white flex flex-col">
+        <!-- Desktop Sidebar -->
+        <aside class="hidden lg:flex w-64 bg-gray-900 text-white flex-col">
             <div class="p-6 flex items-center gap-3 border-b border-gray-800">
                 <div class="bg-teal-600 p-2 rounded-lg">
                     <span class="material-symbols-outlined text-white">vpn_key</span>
@@ -51,16 +108,16 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-auto">
-            <header class="bg-white border-b px-8 py-4">
-                <h2 class="text-2xl font-bold">Pipeline de Vacantes</h2>
-                <p class="text-gray-600">Gestiona el proceso de reclutamiento</p>
+        <main class="flex-1 overflow-auto w-full page-transition">
+            <header class="bg-white border-b px-4 lg:px-8 py-4 animate-fade-in">
+                <h2 class="text-xl lg:text-2xl font-bold">Pipeline de Vacantes</h2>
+                <p class="text-sm lg:text-base text-gray-600">Gestiona el proceso de reclutamiento</p>
             </header>
             
-            <div class="p-8">
-                <div class="flex gap-6 overflow-x-auto pb-4">
+            <div class="p-4 lg:p-8">
+                <div class="flex gap-4 lg:gap-6 overflow-x-auto pb-4 stagger-children">
                     <!-- Columna: Nuevas -->
-                    <div class="w-80 flex-shrink-0">
+                    <div class="w-72 lg:w-80 flex-shrink-0">
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="font-bold text-sm uppercase flex items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-teal-600"></div>
@@ -70,7 +127,7 @@
                         </div>
                         
                         <div class="space-y-4">
-                            <div class="bg-white p-4 rounded-xl border hover:border-teal-600 transition-all">
+                            <div class="bg-white p-4 rounded-xl border card-hover">
                                 <span class="text-xs font-bold text-teal-600 bg-teal-50 px-2 py-1 rounded">INGENIERÍA</span>
                                 <h4 class="font-bold mt-2">Senior Frontend Engineer</h4>
                                 <p class="text-xs text-gray-500 mt-1">ID: VAC-2024-08 • 12 Candidatos</p>
@@ -80,7 +137,7 @@
                                 </div>
                             </div>
                             
-                            <div class="bg-white p-4 rounded-xl border hover:border-teal-600 transition-all">
+                            <div class="bg-white p-4 rounded-xl border card-hover">
                                 <span class="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded">URGENTE</span>
                                 <h4 class="font-bold mt-2">Cloud Architect</h4>
                                 <p class="text-xs text-gray-500 mt-1">ID: VAC-2024-11 • 5 Candidatos</p>
@@ -93,7 +150,7 @@
                     </div>
 
                     <!-- Columna: En Proceso -->
-                    <div class="w-80 flex-shrink-0">
+                    <div class="w-72 lg:w-80 flex-shrink-0">
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="font-bold text-sm uppercase flex items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-blue-600"></div>
@@ -113,19 +170,19 @@
                                         <span class="text-gray-600">2h 14m restantes</span>
                                     </div>
                                     <div class="w-full bg-gray-200 h-1 rounded-full">
-                                        <div class="bg-teal-600 h-1 rounded-full" style="width: 85%"></div>
+                                        <div class="bg-teal-600 h-1 rounded-full progress-animate" style="width: 85%"></div>
                                     </div>
                                 </div>
                                 <div class="mt-4 pt-4 border-t flex justify-between items-center">
                                     <div class="text-xs"><span class="font-bold text-teal-600">18/22</span> evaluados</div>
-                                    <button class="bg-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded">Asignar Score</button>
+                                    <button class="bg-teal-600 text-white text-xs font-bold px-3 py-1.5 rounded btn-animate">Asignar Score</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Columna: Finalizadas -->
-                    <div class="w-80 flex-shrink-0">
+                    <div class="w-72 lg:w-80 flex-shrink-0">
                         <div class="flex items-center justify-between mb-4">
                             <h3 class="font-bold text-sm uppercase flex items-center gap-2">
                                 <div class="w-2 h-2 rounded-full bg-green-600"></div>
@@ -159,5 +216,12 @@
             </div>
         </main>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
