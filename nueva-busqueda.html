@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llave en mano - Nueva Búsqueda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Manrope', sans-serif; }
+        .active-nav { background-color: rgba(0, 143, 140, 0.1); border-left: 4px solid #008f8c; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-900 text-white flex flex-col">
+            <div class="p-6 flex items-center gap-3 border-b border-gray-800">
+                <div class="bg-teal-600 p-2 rounded-lg">
+                    <span class="material-symbols-outlined text-white">vpn_key</span>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold">Llave en mano</h1>
+                    <p class="text-xs text-teal-400">Sistema de Reclutamiento</p>
+                </div>
+            </div>
+            
+            <nav class="flex-1 px-3 py-4 space-y-1">
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="text-sm">Dashboard</span>
+                </a>
+                <a href="vacantes.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">work</span>
+                    <span class="text-sm">Vacantes</span>
+                </a>
+                <a href="candidatos.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">group</span>
+                    <span class="text-sm">Candidatos</span>
+                </a>
+                <a href="nueva-busqueda.html" class="flex items-center gap-3 px-4 py-3 rounded-lg active-nav text-teal-500">
+                    <span class="material-symbols-outlined">add_circle</span>
+                    <span class="text-sm font-semibold">Nueva Búsqueda</span>
+                </a>
+                <a href="suscripcion.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">payments</span>
+                    <span class="text-sm">Suscripción</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+            <header class="bg-white border-b px-8 py-4">
+                <h2 class="text-2xl font-bold">Crear Nueva Búsqueda</h2>
+                <p class="text-gray-600">Define los requisitos del candidato ideal</p>
+            </header>
+            
+            <div class="p-8 max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-sm border p-6 mb-6">
+                    <div class="flex justify-between items-end mb-4">
+                        <div>
+                            <p class="text-xs font-bold text-teal-600 uppercase mb-1">Progreso Actual</p>
+                            <h3 class="text-xl font-bold">Paso 1 de 3: Información General</h3>
+                        </div>
+                        <span class="text-2xl font-bold text-teal-600">33%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 h-3 rounded-full">
+                        <div class="bg-teal-600 h-3 rounded-full" style="width: 33.33%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border overflow-hidden">
+                    <div class="p-6 bg-gray-50 border-b">
+                        <h4 class="text-lg font-bold">1. Fundamentos del Rol</h4>
+                        <p class="text-sm text-gray-600">Especifica los parámetros básicos</p>
+                    </div>
+                    
+                    <div class="p-6 space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Título del Puesto</label>
+                                <input type="text" placeholder="ej. Senior Fullstack Engineer" 
+                                       class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-teal-600">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Departamento</label>
+                                <select class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-teal-600">
+                                    <option>Ingeniería</option>
+                                    <option>Producto</option>
+                                    <option>Diseño</option>
+                                    <option>Ventas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Nivel de Seniority</label>
+                            <div class="grid grid-cols-4 gap-3">
+                                <button class="px-4 py-3 border rounded-lg hover:border-teal-600 transition-all">Junior</button>
+                                <button class="px-4 py-3 border-2 border-teal-600 bg-teal-50 text-teal-600 font-bold rounded-lg">Mid-Level</button>
+                                <button class="px-4 py-3 border rounded-lg hover:border-teal-600 transition-all">Senior</button>
+                                <button class="px-4 py-3 border rounded-lg hover:border-teal-600 transition-all">Principal</button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Preferencia de Ubicación</label>
+                                <div class="flex gap-4 mt-2">
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="location" class="text-teal-600">
+                                        <span>Remoto</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="location" checked class="text-teal-600">
+                                        <span>Híbrido</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="location" class="text-teal-600">
+                                        <span>Presencial</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Rango Salarial (USD)</label>
+                                <div class="flex items-center gap-2">
+                                    <input type="number" placeholder="Mín" class="w-full px-4 py-3 border rounded-lg">
+                                    <span>-</span>
+                                    <input type="number" placeholder="Máx" class="w-full px-4 py-3 border rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-teal-50 border border-teal-200 p-4 rounded-lg flex gap-4">
+                            <span class="material-symbols-outlined text-teal-600">info</span>
+                            <div class="text-sm">
+                                <p class="font-bold text-teal-600">Time-Gating Activo</p>
+                                <p class="text-gray-600">Los resultados se liberarán en oleadas basadas en puntajes de coincidencia.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-gray-50 border-t flex justify-between">
+                        <button class="px-6 py-2 text-gray-600 hover:text-gray-900 font-bold">Guardar Borrador</button>
+                        <div class="flex gap-4">
+                            <button class="px-6 py-2 border rounded-lg font-bold hover:bg-white">Atrás</button>
+                            <button class="px-8 py-2 bg-teal-600 text-white rounded-lg font-bold shadow-lg hover:bg-teal-700">Siguiente Paso</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

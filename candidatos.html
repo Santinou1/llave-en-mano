@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llave en mano - Candidatos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Manrope', sans-serif; }
+        .active-nav { background-color: rgba(0, 143, 140, 0.1); border-left: 4px solid #008f8c; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-900 text-white flex flex-col">
+            <div class="p-6 flex items-center gap-3 border-b border-gray-800">
+                <div class="bg-teal-600 p-2 rounded-lg">
+                    <span class="material-symbols-outlined text-white">vpn_key</span>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold">Llave en mano</h1>
+                    <p class="text-xs text-teal-400">Sistema de Reclutamiento</p>
+                </div>
+            </div>
+            
+            <nav class="flex-1 px-3 py-4 space-y-1">
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="text-sm">Dashboard</span>
+                </a>
+                <a href="vacantes.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">work</span>
+                    <span class="text-sm">Vacantes</span>
+                </a>
+                <a href="candidatos.html" class="flex items-center gap-3 px-4 py-3 rounded-lg active-nav text-teal-500">
+                    <span class="material-symbols-outlined">group</span>
+                    <span class="text-sm font-semibold">Candidatos</span>
+                </a>
+                <a href="nueva-busqueda.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">add_circle</span>
+                    <span class="text-sm">Nueva Búsqueda</span>
+                </a>
+                <a href="suscripcion.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <span class="material-symbols-outlined">payments</span>
+                    <span class="text-sm">Suscripción</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto">
+            <header class="bg-white border-b px-8 py-4">
+                <h2 class="text-2xl font-bold">Visualización de Candidatos</h2>
+                <p class="text-gray-600">Revisa habilidades y perfiles de candidatos</p>
+            </header>
+            
+            <div class="p-8">
+                <div class="bg-white rounded-xl shadow-sm border p-6 mb-6">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="px-2 py-1 rounded bg-green-100 text-green-700 text-xs font-bold">POST-TIME-GATING</span>
+                        <span class="text-xs text-gray-500">Desbloqueado hace 2h</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Resultados: Senior Product Designer</h3>
+                    <p class="text-gray-600">Datos psicométricos y técnicos ahora accesibles</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Candidato 1 -->
+                    <div class="bg-white rounded-xl shadow-sm border p-6 flex gap-6">
+                        <div class="flex-shrink-0 text-center">
+                            <div class="w-32 h-32 rounded-xl bg-gray-200 mb-3"></div>
+                            <h4 class="font-bold">Alexander Wright</h4>
+                            <p class="text-xs text-gray-500">Londres, UK • 8+ años</p>
+                            <div class="mt-3 bg-teal-600 text-white text-sm font-bold w-12 h-12 rounded-full flex items-center justify-center mx-auto">
+                                98%
+                            </div>
+                        </div>
+                        
+                        <div class="flex-1">
+                            <h5 class="text-sm font-bold text-gray-400 uppercase mb-4">Competencias Técnicas</h5>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Figma / Design Systems</span>
+                                        <span class="font-bold">9.5/10</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 h-2 rounded-full">
+                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>React / Frontend</span>
+                                        <span class="font-bold">7.2/10</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 h-2 rounded-full">
+                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 72%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Data Analysis / SQL</span>
+                                        <span class="font-bold">6.0/10</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 h-2 rounded-full">
+                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-orange-50 border border-orange-200 rounded-lg">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="material-symbols-outlined text-orange-600">lightbulb</span>
+                                    <span class="text-xs font-bold text-orange-600">INSIGHT IA</span>
+                                </div>
+                                <p class="text-xs text-gray-600 italic">
+                                    "Muestra alta adaptabilidad en ecosistemas B2B complejos. Excelentes habilidades narrativas visuales."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Candidato 2 -->
+                    <div class="bg-white rounded-xl shadow-sm border p-6 flex gap-6 opacity-90">
+                        <div class="flex-shrink-0 text-center">
+                            <div class="w-32 h-32 rounded-xl bg-gray-200 mb-3"></div>
+                            <h4 class="font-bold">Julian Rivera</h4>
+                            <p class="text-xs text-gray-500">San Francisco, US • 6 años</p>
+                            <div class="mt-3 bg-teal-600 text-white text-sm font-bold w-12 h-12 rounded-full flex items-center justify-center mx-auto">
+                                92%
+                            </div>
+                        </div>
+                        
+                        <div class="flex-1">
+                            <h5 class="text-sm font-bold text-gray-400 uppercase mb-4">Competencias Técnicas</h5>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Figma / Design Systems</span>
+                                        <span class="font-bold">8.8/10</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 h-2 rounded-full">
+                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>React / Frontend</span>
+                                        <span class="font-bold">9.0/10</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 h-2 rounded-full">
+                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span>Prototyping / Framer</span>
+                                        <span class="font-bold">9.5/10</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 h-2 rounded-full">
+                                        <div class="bg-teal-600 h-2 rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-orange-50 border border-orange-200 rounded-lg">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="material-symbols-outlined text-orange-600">lightbulb</span>
+                                    <span class="text-xs font-bold text-orange-600">INSIGHT IA</span>
+                                </div>
+                                <p class="text-xs text-gray-600 italic">
+                                    "Potencia técnica con conocimiento profundo de implementación. Ideal para prototipado de alta fidelidad."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
